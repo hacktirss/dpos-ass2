@@ -1,0 +1,16 @@
+#This file is used by the JNDI FSContext.
+#Fri Nov 21 23:59:22 CST 2014
+DATASOURCE/RefAddr/3/Type=password
+DATASOURCE/ClassName=javax.sql.DataSource
+DATASOURCE/RefAddr/3/Content=omicron
+DATASOURCE/RefAddr/2/Encoding=String
+DATASOURCE/RefAddr/0/Type=driverClassName
+DATASOURCE/RefAddr/0/Encoding=String
+DATASOURCE/RefAddr/1/Content=jdbc\:mysql\://localhost\:3306/omicrom
+DATASOURCE/RefAddr/1/Type=url
+DATASOURCE/RefAddr/3/Encoding=String
+DATASOURCE/RefAddr/0/Content=com.mysql.jdbc.Driver
+DATASOURCE/RefAddr/1/Encoding=String
+DATASOURCE/RefAddr/2/Content=omicron
+DATASOURCE/RefAddr/2/Type=username
+DATASOURCE/FactoryName=org.apache.commons.dbcp.BasicDataSourceFactory

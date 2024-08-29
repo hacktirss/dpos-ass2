@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://169.57.7.20:9191/omicromcorpserv/receiver?wsdl" uri="xml-resources/web-service-references/receiver/wsdl/169.57.7.20_9191/omicromcorpserv/receiver.wsdl"/>
+    <system systemId="http://169.57.7.20:9191/omicromcorpserv/receiver?xsd=1" uri="xml-resources/web-service-references/receiver/wsdl/169.57.7.20_9191/omicromcorpserv/receiver.xsd_1.xsd"/>
+    <system systemId="http://169.57.7.20:9191/omicromcorpserv/receiver?xsd=2" uri="xml-resources/web-service-references/receiver/wsdl/169.57.7.20_9191/omicromcorpserv/receiver.xsd_2.xsd"/>
+</catalog>

@@ -1,0 +1,75 @@
+/*
+ *  VendedoresDAO
+ *  © 2015, Softcoatl
+ *  @author Rolando Esquivel Villafaña, Softcoatl
+ *  @version 1.0
+ *  ago 15, 2015
+ */
+
+package com.detisa.omicrom.entity;
+
+import com.infomedia.database.DBException;
+import com.infomedia.database.entity.dao.BaseDAO;
+import com.infomedia.database.entity.vo.BaseVO;
+import com.infomedia.utils.DinamicVO;
+import com.softcoatl.database.mysql.MySQLDB;
+import java.util.List;
+import org.apache.log4j.Logger;
+
+/**
+ *
+ * @author Rolando Esquivel Villafaña, Softcoatl
+ * @version 1.0
+ * @since ago 15, 2015
+ */
+public class VendedoresDAO extends BaseDAO {
+    private static final Logger LOG = Logger.getLogger(VendedoresDAO.class);
+
+    public static DinamicVO getNameByNIP(String nip) throws DBException {
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT ifnull(nombre, '') as NOMBRE, ")
+                .append("ifnull(ven.id, -1) as ID, ")
+                .append("ifnull(ven.nip, 'INCORRECTO') AS nip ")
+                .append("FROM variables ")
+                .append("LEFT JOIN ven ON 1=1 AND nip='").append(nip).append("'");
+
+        LOG.debug(sql);
+        return MySQLDB.getUniqueRow(sql.toString());
+    }//getNameByNip
+
+    public static DinamicVO getByNIP(String nip) throws DBException {
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT * ")
+                .append("FROM ven ")
+                .append("WHERE nip='").append(nip).append("' ")
+                .append("AND activo = 'Si'");
+        LOG.debug(sql);
+        return MySQLDB.getUniqueRow(sql.toString());
+    }//getNameByNip
+
+    @Override
+    public boolean create(BaseVO poNew) throws DBException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public DinamicVO retrieve(BaseVO poCondition) throws DBException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<DinamicVO> retrieveAll(BaseVO poCondition) throws DBException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean update(BaseVO poValues, BaseVO poCondition) throws DBException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean delete(BaseVO poCondition) throws DBException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+}
